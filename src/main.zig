@@ -1,16 +1,16 @@
 const std = @import("std");
-const c = @cImport(@cInclude("raylib.h"));
+const rl = @cImport(@cInclude("raylib.h"));
 
 pub fn main() !void {
-    c.InitWindow(800, 450, "raylib [core] example - basic window");
-    defer c.CloseWindow();
+    rl.InitWindow(800, 450, "raylib [core] example - basic window");
+    defer rl.CloseWindow();
 
-    c.SetTargetFPS(60);
-    while (!c.WindowShouldClose()) {
-        c.BeginDrawing();
-        c.ClearBackground(c.RAYWHITE);
-        c.DrawText("Congrats! You created your first window!", 190, 200, 20, c.LIGHTGRAY);
-        c.EndDrawing();
+    rl.SetTargetFPS(60);
+    while (!rl.WindowShouldClose()) {
+        rl.BeginDrawing();
+        rl.ClearBackground(rl.RAYWHITE);
+        rl.DrawText("Congrats! You created your first window!", 190, 200, 20, rl.LIGHTGRAY);
+        rl.EndDrawing();
     }
     // // Prints to stderr (it's a shortcut based on `std.io.getStdErr()`)
     // std.debug.print("All your {s} are belong to us.\n", .{"codebase"});
